@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <select onchange="changelistvalue()" id="chooser">
+        <option value="two_coords">Две координаты</option>
+        <option value="three_coords">Три координаты</option>
+    </select>
+    <h1>X:</h1>
+    <input type="number" id="X1">
+    <input type="number" id="X2">
+    <input type="number" id="X3">
+    <h1>Y:</h1>
+    <input type="number" id="Y1">
+    <input type="number" id="Y2">
+    <input type="number" id="Y3">
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+</body>
+<script>
+    
+    document.getElementById("X3").hidden = true;
+    document.getElementById("Y3").hidden = true;
+    function changelistvalue() {
+        let value = document.getElementById("chooser").value;
+        if (value == "three_coords") {
+            document.getElementById("X3").hidden = false;
+            document.getElementById("Y3").hidden = false;
+        }
+        else {
+            document.getElementById("X3").hidden = true;
+            document.getElementById("Y3").hidden = true;
+        }
+    }
+    function result() {
+        let x1 = document.getElementById("X1").value;
+        let x2 = document.getElementById("X2").value;
+        let x3 = document.getElementById("X3").value;
+        let y1 = document.getElementById("Y1").value;
+        let y2 = document.getElementById("Y2").value;
+        let y3 = document.getElementById("Y3").value;
+        let koren = "\221A"
+        let answer = document.getElementById("answer");
+        let value = document.getElementById("chooser").value;
+        if (value == "three_coords") {
+            res = Math.sqrt((x1 - y1) ** 2 + (x2 - y2) ** 2 + (x3 - y3) ** 2)
+            if (res % 1 != 0) {
+                res = (x1 - y1) ** 2 + (x2 - y2) ** 2 + (x3 - y3) ** 2
+    
+                text = "Ответ: Корень из "+res
+                answer.innerText = text
+            }
+            else {
+                
+                text = "Ответ: " + res
+                answer.innerText = text
+            }
+        }
+        else {
+            res = Math.sqrt((x1 - y1) ** 2 + (x2 - y2) ** 2)
+            if (res % 1 != 0) {
+                res = (x1 - y1) ** 2 + (x2 - y2) ** 2
+                text = "Ответ: Корень из "+res
+                answer.innerText = text
+            }
+            else {
+                
+                text = "Ответ: " + res
+                answer.innerText = text
+            }
+        }
+        
+    }
+</script>
+
+</html>

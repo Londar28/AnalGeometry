@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>A:</h1>
+    <input type="number" id="A1">
+    <input type="number" id="A2">
+
+    <h1>B:</h1>
+    <input type="number" id="B1">
+    <input type="number" id="B2">
+    <button onclick="result()">Решить</button>
+    <h1 id="answer_angel"></h1>
+    <h1 id="answer_proekcia"></h1>
+</body>
+
+<script>
+    function result() {
+        // угол между векторами
+        let answer_angel = document.getElementById("answer_angel");
+        let answer_proekcia = document.getElementById("answer_proekcia");
+        let a1 = document.getElementById("A1").value;
+        let a2 = document.getElementById("A2").value;
+        let b1 = document.getElementById("B1").value;
+        let b2 = document.getElementById("B2").value;
+
+        let ab = a1*b1 + a2*b2
+        let n_a = Math.sqrt(a1**2 + a2**2)
+        let n_b = Math.sqrt(b1**2 + b2**2)
+        console.log(n_a)
+        console.log(n_b)
+        let cosangel =ab/(n_a * n_b)
+        // проекция
+        let proekcia_1 = ab / n_b
+        let proekcia_2 = ab / n_a
+        answer_angel.innerText = "Угол между векторами: " + cosangel
+        answer_proekcia.innerText = "Проекция AB на AC: " + proekcia_1 + "\n Проекция AC на AB: "+ proekcia_2
+    }
+</script>
+
+</html>
