@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Коофиценты уравнения прямой AB</h1>
+    <h1>k:</h1>
+    <input type="number" id="k">
+    <h1>K:</h1>
+    <input type="number" id="K1">
+    <input type="number" id="K2">
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+    <h1 id="answer2"></h1>
+
+
+</body>
+<script>
+    function result() {
+        const answer = document.getElementById("answer");
+        const answer2 = document.getElementById("answer2");
+        const k = parseInt(document.getElementById("k").value);
+        const K1 = parseInt(document.getElementById("K1").value);
+        const K2 = parseInt(document.getElementById("K2").value);
+        const k1 = -1 / k
+        const cof_x = k1
+        const cof_c = -1 * k1 * K1 + K2
+        const text = "Уравнение перпендикулярной прямой: " + "y=" + (cof_x === 0 ? "" : (cof_x === 1 ? "x" : (cof_x === -1 ? "-x" : cof_x + "x"))) + (cof_c === 0 ? "" : (cof_c > 0 ? "+" + cof_c : "" + cof_c))
+        answer.innerText = "Ответ: " + text
+        const cof_x_1 = k
+        const cof_c_1 = -1 * k * K1 + K2
+        const text1 = "Уравнение параллельной прямой: " + "y=" + (cof_x_1 === 0 ? "" : (cof_x_1 === 1 ? "x" : (cof_x_1 === -1 ? "-x" : cof_x_1 + "x"))) + (cof_c_1 === 0 ? "" : (cof_c_1 > 0 ? "+" + cof_c_1 : "" + cof_c_1))
+        answer2.innerText = "Ответ: " + text1
+    }
+</script>
+
+</html>

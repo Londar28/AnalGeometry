@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>A:</h1>
+    <input type="number" id="A1">
+    <input type="number" id="A2">
+
+    <h1>B:</h1>
+    <input type="number" id="B1">
+    <input type="number" id="B2">
+
+    <h1>C:</h1>
+    <input type="number" id="C1">
+    <input type="number" id="C2">
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+    
+</body>
+
+<script>
+    function result() {
+        // Площадь триугольника
+        let answer = document.getElementById("answer");
+        let a1 = document.getElementById("A1").value;
+        let a2 = document.getElementById("A2").value;
+        let b1 = document.getElementById("B1").value;
+        let b2 = document.getElementById("B2").value;
+        let c1 = document.getElementById("C1").value;
+        let c2 = document.getElementById("C2").value;
+        if ((a1 === b1 && b1 === c1)  || (a2 === b2 && b2 == c2)) {
+            let text = "Ответ: Невозможно. 3 точки лежат на одной прямой! "
+            answer.innerText = text
+        }
+        else {
+            let m1 = a1-c1;
+            let m2 = a2-c2;
+            let m3 = b1-c1;
+            let m4 = b2-c2;
+            let ploshad = (m1 * m4 - m3 * m2)* 0.5
+            answer.innerText = "Площадь триугольника: " + ploshad
+        }
+    }
+</script>
+
+</html>

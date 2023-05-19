@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>A:</h1>
+    <input type="number" id="A1">
+    <input type="number" id="A2">
+
+    <h1>B:</h1>
+    <input type="number" id="B1">
+    <input type="number" id="B2">
+    <h1>C:</h1>
+    <input type="number" id="C1">
+    <input type="number" id="C2">
+
+
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+    <h1 id="answer2"></h1>
+    <h1 id="answer3"></h1>
+
+</body>
+<script>
+    function result() {
+        // уравнение медианы
+        const answer = document.getElementById("answer");
+        const answer1 = document.getElementById("answer2");
+        const answer2 = document.getElementById("answer3");
+        const a1 = parseInt(document.getElementById("A1").value);
+        const a2 = parseInt(document.getElementById("A2").value);
+        const b1 = parseInt(document.getElementById("B1").value);
+        const b2 = parseInt(document.getElementById("B2").value);
+        const c1 = parseInt(document.getElementById("C1").value);
+        const c2 = parseInt(document.getElementById("C2").value);
+        
+        const cof_x_vis_A = b1 - c1
+        const cof_y_vis_A = (c2 - b2)*-1
+        const cof_c_vis_A = -1*(a1 * (b1 - c1)- a2 * (c2 - b2))
+        const text = "Уравнение высоты из A: " + (cof_x_vis_A === 0 ? "" : (cof_x_vis_A > 0 ? cof_x_vis_A + "x" : "" + cof_x_vis_A + "x")) + (cof_y_vis_A === 0 ? "" : (cof_y_vis_A > 0 ? "+" + cof_y_vis_A + "y" : "" + cof_y_vis_A + "y")) + (cof_c_vis_A === 0 ? "" : (cof_c_vis_A > 0 ? "+" + cof_c_vis_A : "" + cof_c_vis_A)) + " = 0"
+        answer.innerText = "Ответ: " + text
+        
+        const cof_x_vis_B = a1 - c1
+        const cof_y_vis_B = (c2 - a2)*-1
+        const cof_c_vis_B = -1*(b1 * (a1 - c1)- b2 * (c2 - a2))
+        const text1 = "Уравнение высоты из B: " + (cof_x_vis_B === 0 ? "" : (cof_x_vis_B> 0 ? cof_x_vis_B + "x" : "" + cof_x_vis_B + "x")) + (cof_y_vis_B === 0 ? "" : (cof_y_vis_B > 0 ? "+" + cof_y_vis_B + "y" : "" + cof_y_vis_B + "y")) + (cof_c_vis_B === 0 ? "" : (cof_c_vis_B > 0 ? "+" + cof_c_vis_B : "" + cof_c_vis_B)) + " = 0"
+        answer1.innerText = text1
+        
+        const tp_y = ((cof_x_vis_A*cof_c_vis_B*-1)-(cof_x_vis_B*cof_c_vis_A*-1))/((cof_x_vis_A*cof_y_vis_B*-1)-(cof_x_vis_B*cof_y_vis_A*-1))
+        const tp_x = (-1*((cof_y_vis_A*tp_y)-cof_c_vis_A))/cof_x_vis_A
+        const text3 = "Точка пересечения высот: { "+-1*tp_x+"; "+-1*tp_y+"}"
+        answer2.innerText = text3
+    }
+</script>
+</html>

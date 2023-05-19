@@ -3,19 +3,38 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
 </head>
 
 <body>
-    <h1>A:</h1>
-    <input type="number" id="A1">
-    <input type="number" id="A2">
+    <p><img src="png/vector.png" 
+        alt="Иллюстрация" align="right" 
+        vspace="5" hspace="5"><b>Углом между двумя векторами</b>, отложенными от одной точки, называется кратчайший угол,
+         на который нужно повернуть один из векторов вокруг своего начала до положения сонаправленности с другим вектором.Угол между двумя векторами a и b можно найти использовав следующую формулу: 
+    </p>
+    <img src="png/vectorform.png" 
+        alt="Иллюстрация" align="center" 
+        vspace="5" hspace="5">
+    <p>
+        Для вычисления проекции вектора a на направление вектора b из определения скалярного произведения получена формула:
+    </p>
+    <img src="png/proek.png" 
+    alt="Иллюстрация" align="center" 
+    vspace="5" hspace="5">
+    <br>
+    <div class="input">
+        <h1>A:</h1>
+        <input type="number" id="A1">
+        <input type="number" id="A2">
 
-    <h1>B:</h1>
-    <input type="number" id="B1">
-    <input type="number" id="B2">
-    <button onclick="result()">Решить</button>
-    <h1 id="answer_angel"></h1>
-    <h1 id="answer_proekcia"></h1>
+        <h1>B:</h1>
+        <input type="number" id="B1">
+        <input type="number" id="B2">
+        <br>
+        <button onclick="result()">Решить</button>
+        <h1 id="answer_angel"></h1>
+        <h1 id="answer_proekcia"></h1>
+    </div>
 </body>
 
 <script>
@@ -37,7 +56,7 @@
         // проекция
         let proekcia_1 = ab / n_b
         let proekcia_2 = ab / n_a
-        answer_angel.innerText = "Угол между векторами: " + cosangel
+        answer_angel.innerText = "Косинус угла между векторами: " + cosangel
         answer_proekcia.innerText = "Проекция AB на AC: " + proekcia_1 + "\n Проекция AC на AB: "+ proekcia_2
     }
 </script>

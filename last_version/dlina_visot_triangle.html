@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>A:</h1>
+    <input type="number" id="A1">
+    <input type="number" id="A2">
+
+    <h1>B:</h1>
+    <input type="number" id="B1">
+    <input type="number" id="B2">
+    <h1>C:</h1>
+    <input type="number" id="C1">
+    <input type="number" id="C2">
+
+
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+    <h1 id="answer2"></h1>
+    <h1 id="answer3"></h1>
+
+</body>
+<script>
+    function result() {
+        // уравнение медианы
+        const answer = document.getElementById("answer");
+        const answer1 = document.getElementById("answer2");
+        const answer2 = document.getElementById("answer3");
+        const a1 = parseInt(document.getElementById("A1").value);
+        const a2 = parseInt(document.getElementById("A2").value);
+        const b1 = parseInt(document.getElementById("B1").value);
+        const b2 = parseInt(document.getElementById("B2").value);
+        const c1 = parseInt(document.getElementById("C1").value);
+        const c2 = parseInt(document.getElementById("C2").value);
+
+
+        if ((a1 === b1 && b1 === c1) || (a2 === b2 && b2 == c2)) {
+            const text = "Ответ: Невозможно. 3 точки лежат на одной прямой! "
+            answer.innerText = text
+        }
+        else {
+        //AB
+        const cof_x = b2 - a2
+        const cof_y = a1 - b1
+        const cof_c = a2 * b1 - a1 * b2
+        //AC
+        const cof_x_1 = c2 - a2
+        const cof_y_1 = a1 - c1
+        const cof_c_1 = a2 * c1 - a1 * c2
+        //BC
+        const cof_x_2 = c2 - b2
+        const cof_y_2 = b1 - c1
+        const cof_c_2 = b2 * c1 - b1 * c2
+        
+        const d_A_BC_1 = Math.abs(cof_x_2 * a1 + cof_y_2 * a2 + cof_c_2)
+        const d_A_BC_2 = calcsqrt(cof_x_2,cof_y_2)
+        const d_A_BC = d_A_BC_1/d_A_BC_2
+        const text = "Ответ: Длина высоты из вершины А: " + d_A_BC
+        answer.innerText = text
+
+        const d_B_AC_1 = Math.abs(cof_x_1 * b1 + cof_y_1 * b2 + cof_c_1)
+        const d_B_AC_2 = calcsqrt(cof_x_1,cof_y_1)
+        const d_B_AC = d_B_AC_1/d_B_AC_2
+        const text1 = "Длина высоты из вершины B: " + d_B_AC
+        answer1.innerText = text1
+
+        const d_C_AB_1 = Math.abs(cof_x * c1 + cof_y * c2 + cof_c)
+        const d_C_AB_2 = calcsqrt(cof_x,cof_y)
+        const d_C_AB = d_C_AB_1/d_C_AB_2
+        const text2 = "Длина высоты из вершины C: " + d_C_AB
+        answer2.innerText = text2
+        }
+    }
+    function calcsqrt(a, b) {
+        return (Math.sqrt((a * a) + (b * b)));
+    }
+</script>
+
+</html>

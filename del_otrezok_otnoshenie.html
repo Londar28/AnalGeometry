@@ -3,9 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
 </head>
 
 <body>
+    <p>Даны точки A<sub>1</sub>(x<sub>1</sub>;y<sub>1</sub>) и A<sub>2</sub>(x<sub>2</sub>;y<sub>2</sub>). <b>Требуется найти координаты точки K(x;y)</b>, делящей отрезок A<sub>1</sub>A<sub>2</sub>, в заданном отношении.
+        Для этого нужно воспользоваться сначала формулой для нахождения <code>&#955</code>;.А затем найти координаты K по формуле
+        
+    </p>
+    <img src="png/otn.png" 
+        alt="Иллюстрация" align="center" 
+        vspace="5" hspace="5">
+    <p>
+        Формула вычисления расстояния от точки A(x<sub>a</sub>, y<sub>a</sub>, z<sub>a</sub>) до точки B(x<sub>b</sub>, y<sub>b</sub>, z<sub>b</sub>) в пространстве:
+    </p>
+    <img src="png/otn1.png" 
+    alt="Иллюстрация" align="center" 
+    vspace="5" hspace="5">
+    <br>
+
+    Даны точки A1(x1;y1) и A2(x2;y2). Требуется найти координаты точки K(x;y), делящей отрезок A1A2, в данном отношении.
     <h1>A:</h1>
     <input type="number" id="A1">
     <input type="number" id="A2">
@@ -17,7 +34,7 @@
     <input type="number" id="M1">
     <p1>:</p1>
     <input type="number" id="M2">
-
+    <br>
     <button onclick="result()">Решить</button>
     <h1 id="answer"></h1>
     
@@ -44,7 +61,7 @@
 
 
 
-        answer.innerText = "M: (" +mx +"; " + my + ")";
+        answer.innerText = "K: (" +mx +"; " + my + ")";
     }
 </script>
 
