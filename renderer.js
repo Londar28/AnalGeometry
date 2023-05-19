@@ -6,17 +6,18 @@
 window.onload = () => {
   console.log(window);
   const buttonsFrame = document.getElementById("buttonsFrame")
-  const buttondoxy = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[0]
-  const buttonsoat = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[1]
-  const buttontgpr = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[2]
-  const buttonplos = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[3]
-  const buttondoo = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[4]
-  const buttonymt = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[5]
-  const buttonyp = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[6]
-  const buttonyv = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[7]
-  const buttondvt = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[8]
-  const buttonyppap = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[9]
-  const buttontest = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[10]
+  const buttondoxy = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[1]
+  const buttonsoat = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[2]
+  const buttontgpr = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[3]
+  const buttonplos = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[4]
+  const buttondoo = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[5]
+  const buttonymt = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[6]
+  const buttonyp = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[7]
+  const buttonyv = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[8]
+  const buttondvt = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[9]
+  const buttonyppap = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[10]
+  const buttontest = buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[0]
+  
   // console.log(buttonFrame);
   buttondoxy.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"

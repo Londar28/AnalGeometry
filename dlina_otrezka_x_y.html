@@ -3,23 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
+
 </head>
 
 <body>
-    <select onchange="changelistvalue()" id="chooser">
-        <option value="two_coords">Две координаты</option>
-        <option value="three_coords">Три координаты</option>
-    </select>
-    <h1>X:</h1>
-    <input type="number" id="X1">
-    <input type="number" id="X2">
-    <input type="number" id="X3">
-    <h1>Y:</h1>
-    <input type="number" id="Y1">
-    <input type="number" id="Y2">
-    <input type="number" id="Y3">
-    <button onclick="result()">Решить</button>
-    <h1 id="answer"></h1>
+    <p><b><img src="png/xy.png" 
+        alt="Иллюстрация" align="right" 
+        vspace="5" hspace="5">Расстояние между двумя точками</b> — это длина отрезка, что соединяет эти точки.
+        В зависимости от размерности задачи расстояние между двумя точками можно найти используя следующие формулы:
+        Формула вычисления расстояния от точки A(x<sub>a</sub>, y<sub>a</sub>) до точки B(x<sub>b</sub>, y<sub>b</sub>) на плоскости:
+    </p>
+    <img src="png/AB2 (2).png" 
+        alt="Иллюстрация" align="center" 
+        vspace="5" hspace="5">
+    <p>
+        Формула вычисления расстояния от точки A(x<sub>a</sub>, y<sub>a</sub>, z<sub>a</sub>) до точки B(x<sub>b</sub>, y<sub>b</sub>, z<sub>b</sub>) в пространстве:
+    </p>
+    <img src="png/AB3 (2).png" 
+    alt="Иллюстрация" align="center" 
+    vspace="5" hspace="5">
+    <br>
+    <div class="select">
+        <select onchange="changelistvalue()" id="chooser">
+           <option value="two_coords">Две координаты</option>
+           <option value="three_coords">Три координаты</option>
+        </select>
+     </div>
+
+    <div class="input">
+        <h1>A:</h1>
+        <input type="number" id="X1">
+        <input type="number" id="X2">
+        <input type="number" id="X3">
+        <h1>B:</h1>
+        <input type="number" id="Y1">
+        <input type="number" id="Y2">
+        <input type="number" id="Y3">
+        <br>
+        <button onclick="result()">Решить</button>
+        <h1 id="answer"></h1>
+    </div>
 </body>
 <script>
     
