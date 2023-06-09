@@ -29,7 +29,7 @@ select::-ms-expand {
   position: relative;
   display: flex;
   width: 15em;
-  height: 2em;
+  height: 3em;
   line-height: 2;
   background: #b4b4b4;
   overflow: hidden;

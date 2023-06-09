@@ -22,45 +22,89 @@ window.onload = () => {
   buttondoxy.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'dlina_otrezka_x_y.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttondoxy.classList.add("active")
   })
   buttonymt.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'yrav_median_triangle.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonymt.classList.add("active")
   })
   buttonyppap.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'yrav_pramo_per_and_par.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonyppap.classList.add("active")
   })
   buttonyp.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'yrav_pramoy.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonyp.classList.add("active")
   })
   buttondvt.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'dlina_visot_triangle.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttondvt.classList.add("active")
   })
   buttonyv.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'yrav_visot.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonyv.classList.add("active")
   })
   buttontest.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'preview.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttontest.classList.add("active")
   })
   buttontgpr.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'angel_pryam_proekciya.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttontgpr.classList.add("active")
   })
   buttonsoat.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'Sides_of_a_triangle.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonsoat.classList.add("active")
   })
   buttonplos.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'ploshad_triangle.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttonplos.classList.add("active")
   })
   buttondoo.addEventListener("click", () => {
     // location.href="dlina_otrezka_x_y.html"
     document.getElementById("mainwindow").setAttribute('src', 'del_otrezok_otnoshenie.html')
+    for (let i = 0; i < 11; i++) {
+      test =buttonsFrame.contentDocument.documentElement.getElementsByTagName("button")[i].classList.remove("active")
+    }
+    buttondoo.classList.add("active")
   })
 }
