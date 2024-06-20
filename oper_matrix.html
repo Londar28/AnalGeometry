@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+    <h1>Размерность матриц</h1>
+    <div class="select">
+        <select onchange="changelistvalue()" id="chooser">
+            <option value="two_coords">2х2</option>
+            <option value="three_coords">3х3</option>
+        </select>
+    </div>
+    <h1>Операция</h1>
+    <div class="select">
+        <select id="oper">
+            <option value="summ">+</option>
+            <option value="minus">-</option>
+            <option value="ymnoj">*</option>
+        </select>
+    </div>
+    <div class="matrix_A">
+        <h1>A:</h1>
+        <input type="number" id="A11">
+        <input type="number" id="A12">
+        <input type="number" id="A13">
+        <input type="number" id="A21">
+        <input type="number" id="A22">
+        <input type="number" id="A23">
+        <input type="number" id="A31">
+        <input type="number" id="A32">
+        <input type="number" id="A33">
+    </div>
+    <div class="matrix_B">
+        <h1>B:</h1>
+        <input type="number" id="B11">
+        <input type="number" id="B12">
+        <input type="number" id="B13">
+        <input type="number" id="B21">
+        <input type="number" id="B22">
+        <input type="number" id="B23">
+        <input type="number" id="B31">
+        <input type="number" id="B32">
+        <input type="number" id="B33">
+    </div>
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+</body>
+
+<script>
+    document.getElementById("A13").hidden = true;
+    document.getElementById("A23").hidden = true;
+    document.getElementById("A31").hidden = true;
+    document.getElementById("A32").hidden = true;
+    document.getElementById("A33").hidden = true;
+    document.getElementById("B13").hidden = true;
+    document.getElementById("B23").hidden = true;
+    document.getElementById("B31").hidden = true;
+    document.getElementById("B32").hidden = true;
+    document.getElementById("B33").hidden = true;
+    function changelistvalue() {
+        let value = document.getElementById("chooser").value;
+        if (value == "three_coords") {
+            document.getElementById("A31").hidden = false;
+            document.getElementById("A32").hidden = false;
+            document.getElementById("A33").hidden = false;
+            document.getElementById("B31").hidden = false;
+            document.getElementById("B32").hidden = false;
+            document.getElementById("B33").hidden = false;
+            document.getElementById("A13").hidden = false;
+            document.getElementById("A23").hidden = false;
+            document.getElementById("B13").hidden = false;
+            document.getElementById("B23").hidden = false;
+        }
+        else {
+            document.getElementById("A13").hidden = true;
+            document.getElementById("A23").hidden = true;
+            document.getElementById("A31").hidden = true;
+            document.getElementById("A32").hidden = true;
+            document.getElementById("A33").hidden = true;
+            document.getElementById("B31").hidden = true;
+            document.getElementById("B32").hidden = true;
+            document.getElementById("B33").hidden = true;
+            document.getElementById("B13").hidden = true;
+            document.getElementById("B23").hidden = true;
+        }
+    }
+    function result() {
+        let a11 = document.getElementById("A11").value;
+        let a12 = document.getElementById("A12").value;
+        let a13 = document.getElementById("A13").value;
+        let a21 = document.getElementById("A21").value;
+        let a22 = document.getElementById("A22").value;
+        let a23 = document.getElementById("A23").value;
+        let a31 = document.getElementById("A31").value;
+        let a32 = document.getElementById("A32").value;
+        let a33 = document.getElementById("A33").value;
+        let b11 = document.getElementById("B11").value;
+        let b12 = document.getElementById("B12").value;
+        let b13 = document.getElementById("B13").value;
+        let b21 = document.getElementById("B21").value;
+        let b22 = document.getElementById("B22").value;
+        let b23 = document.getElementById("B23").value;
+        let b31 = document.getElementById("B31").value;
+        let b32 = document.getElementById("B32").value;
+        let b33 = document.getElementById("B33").value;
+
+        let c11
+        let c12
+        let c13
+        let c21
+        let c22
+        let c23
+        let c31
+        let c32
+        let c33
+        let answer = document.getElementById("answer");
+        let value = document.getElementById("chooser").value;
+        let oper = document.getElementById("oper").value;
+        console.log(oper)
+        if (value == "three_coords") {
+            switch (oper) {
+                case 'summ':
+                    c11 = parseInt(a11) + parseInt(b11)
+                    c12 = parseInt(a12) + parseInt(b12)
+                    c13 = parseInt(a13) + parseInt(b13)
+                    c21 = parseInt(a21) + parseInt(b21)
+                    c22 = parseInt(a22) + parseInt(b22)
+                    c23 = parseInt(a23) + parseInt(b23)
+                    c31 = parseInt(a31) + parseInt(b31)
+                    c32 = parseInt(a32) + parseInt(b32)
+                    c33 = parseInt(a33) + parseInt(b33)
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + " " + c13 + "\n " + c21 + " " + c22 + " " + c23 + "\n " + c31 + " " + c32 + " " + c33;
+                    answer.innerText = text;
+                    break
+                case 'minus':
+                    c11 = parseInt(a11) - parseInt(b11)
+                    c12 = parseInt(a12) - parseInt(b12)
+                    c13 = parseInt(a13) - parseInt(b13)
+                    c21 = parseInt(a21) - parseInt(b21)
+                    c22 = parseInt(a22) - parseInt(b22)
+                    c23 = parseInt(a23) - parseInt(b23)
+                    c31 = parseInt(a31) - parseInt(b31)
+                    c32 = parseInt(a32) - parseInt(b32)
+                    c33 = parseInt(a33) - parseInt(b33)
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + " " + c13 + "\n " + c21 + " " + c22 + " " + c23 + "\n " + c31 + " " + c32 + " " + c33;
+                    answer.innerText = text;
+                    break
+                case 'ymnoj':
+                    c11 = a11 * b11 + a12 * b21 + a13 * b31
+                    c12 = a11 * b12 + a12 * b22 + a13 * b32
+                    c13 = a11 * b13 + a12 * b23 + a13 * b33
+                    c21 = a21 * b11 + a22 * b21 + a23 * b31
+                    c22 = a21 * b12 + a22 * b22 + a23 * b32
+                    c23 = a21 * b13 + a22 * b23 + a23 * b33
+                    c31 = a31 * b11 + a32 * b21 + a33 * b31
+                    c32 = a31 * b12 + a32 * b22 + a33 * b32
+                    c33 = a31 * b13 + a32 * b23 + a33 * b33
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + " " + c13 + "\n " + c21 + " " + c22 + " " + c23 + "\n " + c31 + " " + c32 + " " + c33;
+                    answer.innerText = text;
+                    break
+            }
+        }
+        else {
+            switch (oper) {
+                case 'summ':
+                    c11 = parseInt(a11) + parseInt(b11)
+                    c12 = parseInt(a12) + parseInt(b12)
+
+                    c21 = parseInt(a21) + parseInt(b21)
+                    c22 = parseInt(a22) + parseInt(b22)
+
+
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + "\n " + c21 + " " + c22;
+                    answer.innerText = text;
+                    break
+                case 'minus':
+                    c11 = parseInt(a11) - parseInt(b11)
+                    c12 = parseInt(a12) - parseInt(b12)
+                    c21 = parseInt(a21) - parseInt(b21)
+                    c22 = parseInt(a22) - parseInt(b22)
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + "\n " + c21 + " " + c22;
+                    answer.innerText = text;
+                    break
+                case 'ymnoj':
+                    c11 = a11 * b11 + a12 * b21
+                    c12 = a11 * b12 + a12 * b22
+                    c21 = a21 * b11 + a22 * b21
+                    c22 = a21 * b12 + a22 * b22
+                    text = "Ответ: " + "\n" + c11 + " " + c12 + "\n " + c21 + " " + c22;
+                    answer.innerText = text;
+                    break
+            }
+        }
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="1.css">
+</head>
+
+<body>
+    <h1>Размерность матриц</h1>
+    <div class="select">
+        <select onchange="changelistvalue()" id="chooser">
+            <option value="two_coords">2х2</option>
+            <option value="three_coords">3х3</option>
+        </select>
+    </div>
+    <div class="matrix_A">
+        <h1>A:</h1>
+        <input type="number" id="A11">
+        <input type="number" id="A12">
+        <input type="number" id="A13">
+        <input type="number" id="A21">
+        <input type="number" id="A22">
+        <input type="number" id="A23">
+        <input type="number" id="A31">
+        <input type="number" id="A32">
+        <input type="number" id="A33">
+    </div>
+    <button onclick="result()">Решить</button>
+    <h1 id="answer"></h1>
+</body>
+
+<script>
+    document.getElementById("A13").hidden = true;
+    document.getElementById("A23").hidden = true;
+    document.getElementById("A31").hidden = true;
+    document.getElementById("A32").hidden = true;
+    document.getElementById("A33").hidden = true;
+    function changelistvalue() {
+        let value = document.getElementById("chooser").value;
+        if (value == "three_coords") {
+            document.getElementById("A31").hidden = false;
+            document.getElementById("A32").hidden = false;
+            document.getElementById("A33").hidden = false;
+            document.getElementById("A13").hidden = false;
+            document.getElementById("A23").hidden = false;
+            
+        }
+        else {
+            document.getElementById("A13").hidden = true;
+            document.getElementById("A23").hidden = true;
+            document.getElementById("A31").hidden = true;
+            document.getElementById("A32").hidden = true;
+            document.getElementById("A33").hidden = true;
+        }
+    }
+    function result() {
+        let a11 = document.getElementById("A11").value;
+        let a12 = document.getElementById("A12").value;
+        let a13 = document.getElementById("A13").value;
+        let a21 = document.getElementById("A21").value;
+        let a22 = document.getElementById("A22").value;
+        let a23 = document.getElementById("A23").value;
+        let a31 = document.getElementById("A31").value;
+        let a32 = document.getElementById("A32").value;
+        let a33 = document.getElementById("A33").value;
+        let answer = document.getElementById("answer");
+        let value = document.getElementById("chooser").value;
+        if (value == "three_coords") {
+            let res = a11*a22*a33 + a12*a23*a31 + a13*a21*a32 - a13*a22*a31 - a11*a23*a32 - a12*a21*a33
+            text = "Ответ: " + res;
+            answer.innerText = text;
+        }   
+        else{
+            let res = a11*a22 - a12*a21
+            text = "Ответ: " + res;
+            answer.innerText = text;
+        }
+    }
+
+</script>
+
+</html>
